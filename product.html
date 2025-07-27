@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل الجهاز</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      padding: 40px;
+      background-color: #f1f1f1;
+      color: #222;
+    }
+    .box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #00287a;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #0d10cb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1 id="title">تحميل...</h1>
+    <p id="desc">...</p>
+<a href="nu0.html?logged=1">العودة إلى المتجر</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    const descriptions = {
+      "جهاز قياس الضغط": "جهاز رقمي لمراقبة ضغط الدم بدقة وسهولة في المنزل.",
+      "جهاز قياس السكر": "لقياس نسبة السكر في الدم بدقة عالية وسهولة الاستخدام.",
+      "جهاز تأكسج النبض": "يستخدم لقياس نسبة الأوكسجين في الدم ونبض القلب.",
+      "ميزان حرارة رقمي": "يقيس درجة حرارة الجسم بشكل سريع وبدقة.",
+      "كرسي متحرك طبي": "كرسي عملي ومريح لذوي الاحتياجات الخاصة وكبار السن.",
+      "جهاز شفط بلغم": "جهاز يستخدم لسحب الإفرازات من مجرى التنفس.",
+      "كتلك بخار طبي": "جهاز تبخير يستخدم لمعالجة التهابات المجاري التنفسية."
+    };
+
+    document.getElementById("title").innerText = name || "اسم غير معروف";
+    document.getElementById("desc").innerText = descriptions[name] || "لا توجد تفاصيل متوفرة.";
+  </script>
+
+</body>
+</html>
